@@ -1,123 +1,128 @@
+import { Avatar } from "@mui/material";
 import React from "react";
+import User from "../images/avatar.jpg";
 
-// Material Ui Components
-import {
-  Stack,
-  Box,
-  Typography,
-  Menu,
-  MenuItem,
-  // ListItemIcon,
-} from "@mui/material";
+// React bootstrap UI Components
+import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
 import "../css/index.css";
 
 // Material Icons
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import WhatshotIcon from "@mui/icons-material/Whatshot";
+// import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
-const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+const ResponsiveNavbar = () => {
   return (
     <>
       {/* header  */}
-      <Stack
-        alignItems="center"
-        justifyContent="space-between"
-        direction="row"
-        bgcolor="var(--onSurface)"
-        color="#fff"
-      >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <Typography variant="h6" fontWeight="bolder">
-            BLOCK-STARS
-          </Typography>
-          <Typography className="nav-link" variant="p">
-            Buy Crypto
-          </Typography>
-          <Typography className="nav-link" variant="p">
-            Market
-          </Typography>
-          <Typography className="nav-link" variant="p">
-            Spot
-          </Typography>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">BLOCK-STARS</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#features">Market</Nav.Link>
+              <Nav.Link href="#pricing">Spot</Nav.Link>
+              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Deriviatives
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Menu Item
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Deriviatives" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Menu Items
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Menu Item
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Deriviatives" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Menu Item
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Nav>
+              <NavDropdown title="Assets" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Menu Item
+                </NavDropdown.Item>
+              </NavDropdown>
 
-          <Box className="navIcon">
-            <Typography className="nav-link" variant="p" onClick={handleClick}>
-              Deviratives
-              <WhatshotIcon/>
-              <KeyboardArrowDownIcon/>
-            </Typography>
-          </Box>
+              <NavDropdown title="Orders & Trades" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Menu Item
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Menu Item
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
 
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
+            <NavDropdown title="EN/USD" >
+              <NavDropdown.Item>Unread notification</NavDropdown.Item>
+            </NavDropdown>
 
-          <Stack alignItems="center" className="navIcon">
-            <Typography className="nav-link" variant="p" onClick={handleClick}>
-              ByFi Center
-              <KeyboardArrowDownIcon/>
-            </Typography>
-          </Stack>
-
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-
-          <Typography
-            className="nav-link"
-            variant="p"
-            onClick={handleClick}
-          >
-            
-          </Typography>
-
-          
-
-          
-        </Box>
-
-        <Box sx={{ display: "flex", flexDirection: "row" }}>
-          <Typography className="nav-link">gmbfaejhf</Typography>
-          <Typography>d,jhajk</Typography>
-          <Typography>dn,b</Typography>
-        </Box>
-      </Stack>
+            <NavDropdown title={<NotificationsNoneIcon />}>
+              <NavDropdown.Item>Unread notification</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link>
+              <Avatar
+                // alt="user's image"
+                sx={{ width: 30, height: 30 }}
+                src={User}
+              />
+            </Nav.Link>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 };
 
-export default Navbar;
+export default ResponsiveNavbar;

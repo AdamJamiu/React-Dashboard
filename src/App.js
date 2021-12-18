@@ -1,12 +1,13 @@
 import React from "react";
-import Navbar from "./components/Navbar.Component";
-import Footer from "./components/Footer.Components";
+import ResponsiveNavbar from "./components/Navbar.component";
+import Footer from "./components/Footer.component";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <Footer />
+    <ResponsiveNavbar/>
+    <Footer/>
     </>
   );
 }
