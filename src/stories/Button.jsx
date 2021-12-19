@@ -1,17 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './button.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "./button.scss";
+// import colors from "../configurations/colors.config";
 
+function configure() {}
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ filled, variant, size, label, ...props }) => {
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      className={[
+        "bitcost-button",
+        `bitcost-button--${size}`,
+        `bitcost-button--${variant}`,
+        `bitcost-button--${filled ? "filled" : "outlined"}`,
+      ].join(" ")}
       {...props}
     >
       {label}
@@ -20,31 +25,17 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
 };
 
 Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
+  filled: PropTypes.bool,
+  variant: PropTypes.oneOf(["primary", "secondary", "critical", "success"]),
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
   onClick: PropTypes.func,
+  label: PropTypes.any.isRequired,
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
+  filled: true,
+  variant: "primary",
+  size: "md",
   onClick: undefined,
+  label: "Button",
 };

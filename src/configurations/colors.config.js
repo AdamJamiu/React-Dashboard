@@ -1,10 +1,4 @@
-const colors = {
-  dark: {
-    base: "#0E0E17",
-  },
-  light: {
-    base: this.surface,
-  },
+const variables = {
   primary: "#273BEF",
   secondary: "#636770",
   surface: "#F8F8F8",
@@ -17,4 +11,10 @@ const colors = {
   decorative: "linear-gradient(216.56deg, #E250E5 5.32%, #4B50E6 94.32%);",
 };
 
-module.exports = colors;
+module.exports.colors = variables;
+/* module.exports.dark = {
+  base: "#0E0E17",
+};
+module.exports.light = {
+  base: this.surface,
+}; */
