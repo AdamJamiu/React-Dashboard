@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.ttf?ba43e22a213e8ce12d63c414aaa2e2e1") format("truetype"),
+url("./icons.woff?ba43e22a213e8ce12d63c414aaa2e2e1") format("woff"),
+url("./icons.woff2?ba43e22a213e8ce12d63c414aaa2e2e1") format("woff2");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bell:before {
+    content: "\f101";
+}
+.icon-brand-apple:before {
+    content: "\f102";
+}
+.icon-calculator:before {
+    content: "\f103";
+}
+.icon-calendar-alt:before {
+    content: "\f104";
+}
+.icon-chevron-down:before {
+    content: "\f105";
+}
+.icon-chevron-right:before {
+    content: "\f106";
+}
+.icon-eye-open:before {
+    content: "\f107";
+}
+.icon-flame:before {
+    content: "\f108";
+}
+.icon-indicator-arrow:before {
+    content: "\f109";
+}
+.icon-magnifier:before {
+    content: "\f10a";
+}
+.icon-moon:before {
+    content: "\f10b";
+}
+.icon-padlock:before {
+    content: "\f10c";
+}
+.icon-Scan-QR:before {
+    content: "\f10d";
+}
+.icon-star-empty:before {
+    content: "\f10e";
+}
+.icon-star:before {
+    content: "\f10f";
+}
+.icon-trash:before {
+    content: "\f110";
+}
+.icon-triangle-inverted:before {
+    content: "\f111";
+}
+.icon-triangle:before {
+    content: "\f112";
+}

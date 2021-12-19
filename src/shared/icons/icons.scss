@@ -1,0 +1,95 @@
+$icons-font: "icons";
+
+@font-face {
+    font-family: $icons-font;
+    src: url("./icons.ttf?ba43e22a213e8ce12d63c414aaa2e2e1") format("truetype"),
+url("./icons.woff?ba43e22a213e8ce12d63c414aaa2e2e1") format("woff"),
+url("./icons.woff2?ba43e22a213e8ce12d63c414aaa2e2e1") format("woff2");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$icons-map: (
+    "bell": "\f101",
+    "brand-apple": "\f102",
+    "calculator": "\f103",
+    "calendar-alt": "\f104",
+    "chevron-down": "\f105",
+    "chevron-right": "\f106",
+    "eye-open": "\f107",
+    "flame": "\f108",
+    "indicator-arrow": "\f109",
+    "magnifier": "\f10a",
+    "moon": "\f10b",
+    "padlock": "\f10c",
+    "Scan-QR": "\f10d",
+    "star-empty": "\f10e",
+    "star": "\f10f",
+    "trash": "\f110",
+    "triangle-inverted": "\f111",
+    "triangle": "\f112",
+);
+
+.icon-bell:before {
+    content: map-get($icons-map, "bell");
+}
+.icon-brand-apple:before {
+    content: map-get($icons-map, "brand-apple");
+}
+.icon-calculator:before {
+    content: map-get($icons-map, "calculator");
+}
+.icon-calendar-alt:before {
+    content: map-get($icons-map, "calendar-alt");
+}
+.icon-chevron-down:before {
+    content: map-get($icons-map, "chevron-down");
+}
+.icon-chevron-right:before {
+    content: map-get($icons-map, "chevron-right");
+}
+.icon-eye-open:before {
+    content: map-get($icons-map, "eye-open");
+}
+.icon-flame:before {
+    content: map-get($icons-map, "flame");
+}
+.icon-indicator-arrow:before {
+    content: map-get($icons-map, "indicator-arrow");
+}
+.icon-magnifier:before {
+    content: map-get($icons-map, "magnifier");
+}
+.icon-moon:before {
+    content: map-get($icons-map, "moon");
+}
+.icon-padlock:before {
+    content: map-get($icons-map, "padlock");
+}
+.icon-Scan-QR:before {
+    content: map-get($icons-map, "Scan-QR");
+}
+.icon-star-empty:before {
+    content: map-get($icons-map, "star-empty");
+}
+.icon-star:before {
+    content: map-get($icons-map, "star");
+}
+.icon-trash:before {
+    content: map-get($icons-map, "trash");
+}
+.icon-triangle-inverted:before {
+    content: map-get($icons-map, "triangle-inverted");
+}
+.icon-triangle:before {
+    content: map-get($icons-map, "triangle");
+}

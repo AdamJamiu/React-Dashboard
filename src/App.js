@@ -1,13 +1,12 @@
-import React from "react";
-import Navbar from "./components/Navbar.Component";
-import Footer from "./components/Footer.Components";
+import { BrowserRouter } from "react-router-dom";
+import Screens from "./screens";
+import "./shared/stylesheets/index.scss";
 
 function App() {
   return (
-    <>
-    <Navbar/>
-    <Footer />
-    </>
+    <BrowserRouter>
+      <Screens />
+    </BrowserRouter>
   );
 }
 
