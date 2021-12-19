@@ -16,15 +16,15 @@ const ResponsiveNavbar = () => {
   return (
     <>
       {/* header  */}
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" className="dark font-small" variant="dark">
         <Container>
           <Navbar.Brand href="#home">BLOCK-STARS</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#features">Market</Nav.Link>
-              <Nav.Link href="#pricing">Spot</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <Nav className="me-auto navbar-link">
+              <Nav.Link href="#features">Buy Crypto</Nav.Link>
+              <Nav.Link href="#pricin">Spot</Nav.Link>
+              <NavDropdown title="Deriviatives" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
                   Deriviatives
                 </NavDropdown.Item>
@@ -39,7 +39,7 @@ const ResponsiveNavbar = () => {
                   Menu Item
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Deriviatives" id="collasible-nav-dropdown">
+              <NavDropdown title="ByFi Center" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
                   Menu Items
                 </NavDropdown.Item>
@@ -54,7 +54,7 @@ const ResponsiveNavbar = () => {
                   Menu Item
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Deriviatives" id="collasible-nav-dropdown">
+              <NavDropdown title="More" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
                   Menu Item
                 </NavDropdown.Item>
@@ -69,6 +69,8 @@ const ResponsiveNavbar = () => {
                   Menu Item
                 </NavDropdown.Item>
               </NavDropdown>
+
+              <Nav.Link>BITUSD</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="Assets" id="collasible-nav-dropdown">
@@ -111,6 +113,8 @@ const ResponsiveNavbar = () => {
             <NavDropdown title={<NotificationsNoneIcon />}>
               <NavDropdown.Item>Unread notification</NavDropdown.Item>
             </NavDropdown>
+            
+            <button class="nav-btn">Wallet</button>
             <Nav.Link>
               <Avatar
                 // alt="user's image"

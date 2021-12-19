@@ -53,12 +53,25 @@ a:active {
   color: var(--onSurface) !important;
 } */
 
-.navIcon{
-    display: flex;
-    flex-direction: row;
-    align-items: center !important;
-} */
+.navbar-link{
+  min-width: max-content;
+}
 
+.nav-btn{
+  padding: 4px 20px;
+  border-radius: 30px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: transparent;
+}
+
+.font-small{
+  font-size: 14px;
+}
+
+.dark{
+  background-color: #111213 !important;
+}
 /* Footer */
 
 .footer {
