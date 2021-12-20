@@ -1,4 +1,4 @@
-import "../src/shared/stylesheets/index.scss";
+import "../src/stylesheets/index.scss";
 import { ThemeProvider } from "styled-components";
 
 export const parameters = {

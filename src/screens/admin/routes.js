@@ -1,4 +1,4 @@
-import Error from "../../shared/components/Error";
+import Error from "../../components/Error";
 import GeneralAdminLayout from "./layouts";
 import HomePage from "./pages/Home";
 

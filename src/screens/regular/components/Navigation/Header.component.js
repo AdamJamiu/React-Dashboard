@@ -1,22 +1,29 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import StyledNavigationHeader from "./Header.styled";
 
 // MUI COMPONENTS
 import {
+  Button,
+  IconButton,
   Menu,
   MenuItem,
   // ListItemIcon,
 } from "@mui/material";
 
-// MUI ICONS
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
+// HELPERS
 import { routeMapper } from "../../routes";
-import Logo from "../../../../components/Logo";
-import UserAvatar from "../../../../components/UserAvatar";
-// import UserAvatar from "../../../../shared/components/UserAvatar";
+import DropDown from "../../../../components/DropDown";
 
+// CUSTOM STYLED COMPONENTS
+import Logo from "../../../../components/Logo";
+import UserMenu from "../../../../components/UserMenu";
+import StyledNavigationHeader from "./Header.styled";
+
+// ASSETS
+import ScanQRCodeIcon from "../../../../images/svg/icon-font/ScanQR.svg";
+import BellIcon from "../../../../images/svg/icon-font/bell.svg";
+import HotjarIcon from "../../../../images/svg/icon-font/flame.svg";
+import SVGIcon from "../../../../components/SVGIcon";
 /**
  * @description Navigation header
  * @returns
@@ -35,37 +42,73 @@ export default function Header() {
 
   // MIDDLE LINKS
   const middleLinks = [
+    // Buy Crypto
     {
       path: routeMapper.home,
-      label: "Buy Crypto",
+      label: <Link to={"#"}>Buy Crypto</Link>,
+      highlight: true,
       attributes: {
-        className: "bg-warning",
+        "data-highlight": true,
       },
     },
+    // Market
     {
       path: routeMapper.home,
-      label: "Market",
+      label: <Link to="#">Market</Link>,
+      attributes: {},
+    },
+    // Spot
+    {
+      path: routeMapper.home,
+      label: <Link to="#">Spot</Link>,
       attributes: {
         className: "",
       },
     },
-    {
-      path: routeMapper.home,
-      label: "Spot",
-      attributes: {
-        className: "",
-      },
-    },
+    // DERIVATIVE
     {
       path: routeMapper.home,
       label: (
         <>
-          <div className="flex gap-[10px]" onClick={handleClick}>
-            <span>Derivative</span>
-            <WhatshotIcon />
-
-            <KeyboardArrowDownIcon />
-          </div>
+          <DropDown showIcon items={[<Link to="#">Get derivatives</Link>]}>
+            <Link to="#">
+              Derivative
+              <SVGIcon src={HotjarIcon} className="icon" alt="hotjar icon" />
+            </Link>
+          </DropDown>
+        </>
+      ),
+      attributes: {
+        className: "",
+      },
+    },
+    // ByFi Center
+    {
+      path: routeMapper.home,
+      label: (
+        <>
+          <DropDown
+            showIcon
+            items={[<Link to="#">Enter the ByFi center</Link>]}
+          >
+            <Link to={routeMapper.home}>
+              <span> ByFi Center</span>
+            </Link>
+          </DropDown>
+        </>
+      ),
+      attributes: {
+        className: "",
+      },
+    },
+    // More
+    {
+      path: routeMapper.home,
+      label: (
+        <>
+          <DropDown showIcon>
+            <Link to={routeMapper.home}>More</Link>
+          </DropDown>
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
@@ -75,8 +118,8 @@ export default function Header() {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>More</MenuItem>
+            <MenuItem onClick={handleClose}>Get more here</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
           </Menu>
         </>
@@ -85,82 +128,19 @@ export default function Header() {
         className: "",
       },
     },
+    // BITUSDT
     {
       path: routeMapper.home,
       label: (
         <>
-          <div className="flex gap-[10px]" onClick={handleClick}>
-            <span>ByFi Center</span>
-            <KeyboardArrowDownIcon />
-            <span className="icon-coins-dether-dth"></span>
-          </div>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
+          <Link
+            to={routeMapper.home}
+            className="flex items-center gap-[2px]"
+            onClick={handleClick}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-        </>
-      ),
-      attributes: {
-        className: "",
-      },
-    },
-    {
-      path: routeMapper.home,
-      label: (
-        <>
-          <div className="flex gap-[10px]" onClick={handleClick}>
-            <span>More</span>
-            <KeyboardArrowDownIcon />
-          </div>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-        </>
-      ),
-      attributes: {
-        className: "",
-      },
-    },
-    {
-      path: routeMapper.home,
-      label: (
-        <>
-          <div className="flex gap-[10px]" onClick={handleClick}>
             <span>BITUSDT</span>
-            <KeyboardArrowDownIcon />
-          </div>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
+            <SVGIcon src={HotjarIcon} className="icon" alt="hotjar icon" />
+          </Link>
         </>
       ),
       attributes: {
@@ -171,13 +151,15 @@ export default function Header() {
 
   // RIGHT SIDE LINKS
   const rightLinks = [
+    // ASSETTS
     {
       path: routeMapper.home,
       label: (
-        <div className="flex gap-[10px]">
-          <span>Assets</span>
-          <KeyboardArrowDownIcon />
-        </div>
+        <DropDown showIcon>
+          <Link to={"#"}>
+            <span>Assets</span>
+          </Link>
+        </DropDown>
       ),
       attributes: {
         className: "",
@@ -187,10 +169,11 @@ export default function Header() {
     {
       path: routeMapper.home,
       label: (
-        <div className="flex gap-[10px]">
-          <span>Orders & Trades</span>
-          <KeyboardArrowDownIcon />
-        </div>
+        <DropDown showIcon>
+          <Link to={"#"}>
+            <span>Orders & Trades</span>
+          </Link>
+        </DropDown>
       ),
       attributes: {
         className: "",
@@ -200,55 +183,58 @@ export default function Header() {
     {
       path: routeMapper.home,
       label: (
-        <div className="flex gap-[10px]">
-          <span>EN/USD</span>
-          <KeyboardArrowDownIcon />
+        <DropDown showIcon items={[<>Korean</>, <>English</>]}>
+          <Link to={"#"}>
+            <span>EN/USD</span>
+          </Link>
+        </DropDown>
+      ),
+      attributes: {
+        className: "",
+      },
+    },
+    // SCAN QR CODE
+    {
+      path: routeMapper.home,
+      label: (
+        <div className="p-2">
+          <IconButton aria-label="scan QR code">
+            <img src={ScanQRCodeIcon} alt="" />
+          </IconButton>
         </div>
       ),
       attributes: {
         className: "",
       },
     },
+    // NOTIFICATION
     {
       path: routeMapper.home,
       label: (
-        <div className="">
-          <span>Scan QRcode</span>
-        </div>
+        <IconButton aria-label="notification">
+          <img src={BellIcon} alt="bell-icon" />
+        </IconButton>
       ),
       attributes: {
         className: "",
       },
     },
+    // WALLET
     {
       path: routeMapper.home,
       label: (
-        <div className="">
-          <span>Notification</span>
-        </div>
-      ),
-      attributes: {
-        className: "",
-      },
-    },
-    {
-      path: routeMapper.home,
-      label: (
-        <div className="">
+        <Button variant="outlined" className="" sx={{ borderRadius: 15 }}>
           <span>Wallet</span>
-        </div>
+        </Button>
       ),
       attributes: {
         className: "",
       },
     },
+    // AVATAR
     {
       path: routeMapper.home,
-      label: (
-        <figure className="">
-          <UserAvatar />
-        </figure>
-      ),
+      label: <UserMenu />,
       attributes: {
         className: "",
       },
@@ -258,29 +244,27 @@ export default function Header() {
   return (
     <>
       {/* header  */}
-      <StyledNavigationHeader dark>
+      <StyledNavigationHeader>
         {/* LOGO */}
-        <figure>
+        <figure className="logo-container">
           <Logo />
         </figure>
 
         <ul className="middle-nav">
-          {middleLinks.map(({ path, attributes, label }, idx) => (
+          {middleLinks.map(({ path, highlight, label }, idx) => (
             <li
               key={idx}
-              {...{ className: `nav-link ${attributes?.className}` }}
+              className={`nav--link ${highlight ? "highlighted" : ""}`}
             >
-              <Link to={path}>{label}</Link>
+              {label}
             </li>
           ))}
         </ul>
 
         <ul className="right-nav">
           {rightLinks.map(({ path, attributes, label }, idx) => (
-            <li key={idx} className="nav-link">
-              <Link to={path} {...attributes}>
-                {label}
-              </Link>
+            <li key={idx} className="nav--link">
+              {label}
             </li>
           ))}
         </ul>
