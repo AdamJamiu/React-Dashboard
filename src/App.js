@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import Screens from "./screens";
-import "./shared/stylesheets/index.scss";
+import "./stylesheets/index.scss";
 
 function App() {
   return (

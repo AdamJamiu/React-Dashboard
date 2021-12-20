@@ -13,8 +13,8 @@ import {
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import { routeMapper } from "../../routes";
-import Logo from "../../../../shared/components/Logo";
-import UserAvatar from "../../../../shared/components/UserAvatar";
+import Logo from "../../../../components/Logo";
+import UserAvatar from "../../../../components/UserAvatar";
 // import UserAvatar from "../../../../shared/components/UserAvatar";
 
 /**
@@ -39,7 +39,7 @@ export default function Header() {
       path: routeMapper.home,
       label: "Buy Crypto",
       attributes: {
-        className: "highlight",
+        className: "bg-warning",
       },
     },
     {
@@ -246,7 +246,7 @@ export default function Header() {
       path: routeMapper.home,
       label: (
         <figure className="">
-         <UserAvatar/>
+          <UserAvatar />
         </figure>
       ),
       attributes: {
@@ -266,10 +266,11 @@ export default function Header() {
 
         <ul className="middle-nav">
           {middleLinks.map(({ path, attributes, label }, idx) => (
-            <li key={idx} className="nav-link">
-              <Link to={path} {...attributes}>
-                {label}
-              </Link>
+            <li
+              key={idx}
+              {...{ className: `nav-link ${attributes?.className}` }}
+            >
+              <Link to={path}>{label}</Link>
             </li>
           ))}
         </ul>

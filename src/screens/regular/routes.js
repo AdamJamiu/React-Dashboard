@@ -1,6 +1,6 @@
 import GeneralRegularLayout from "./layouts";
 import HomePage from "./pages/Home";
-import Error from "../../shared/components/Error";
+import Error from "../../components/Error";
 import AuthLayout from "./layouts/Auth";
 import Authentication from "./pages/Auth";
 

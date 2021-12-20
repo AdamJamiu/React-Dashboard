@@ -1,15 +1,17 @@
 import styled from "styled-components";
-import colors from "../../../../configurations/colors.config";
+import { colors } from "../../../../configurations/colors.config";
 
 const StyledNavigationHeader = styled.nav`
   background: ${colors.onSurface};
   color: #fff;
   display: flex;
   align-items center;
-  row-gap: 10px;
+  gap: 15px;
+  a{
+    padding: 10px 20px;
+  }
   .nav-link {
-    // padding: 16px;
-    outline: 1px solid white;
+    // padding: 16px
   }
   .middle-nav {
     display: flex;

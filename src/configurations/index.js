@@ -1,4 +1,4 @@
-const colors = require('./colors.config')
+const {colors} = require('./colors.config')
 
 module.exports.tailwindcss = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -7,6 +7,7 @@ module.exports.tailwindcss = {
   theme: {
     extend: {
       colors,
+      fontFamily: "Rubik"
     },
     container: {
       center: true,

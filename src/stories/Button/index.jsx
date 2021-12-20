@@ -7,7 +7,7 @@ function configure() {}
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ filled, variant, size, label, ...props }) => {
+export const Button = ({ outlined, variant, size, label, ...props }) => {
   return (
     <button
       type="button"
@@ -15,7 +15,7 @@ export const Button = ({ filled, variant, size, label, ...props }) => {
         "bitcost-button",
         `bitcost-button--${size}`,
         `bitcost-button--${variant}`,
-        `bitcost-button--${filled ? "filled" : "outlined"}`,
+        `bitcost-button--${outlined ? "outlined" : "filled"}`,
       ].join(" ")}
       {...props}
     >
@@ -25,7 +25,7 @@ export const Button = ({ filled, variant, size, label, ...props }) => {
 };
 
 Button.propTypes = {
-  filled: PropTypes.bool,
+  outlined: PropTypes.bool,
   variant: PropTypes.oneOf(["primary", "secondary", "critical", "success"]),
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   onClick: PropTypes.func,
@@ -33,9 +33,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  filled: true,
+  outlined: false,
   variant: "primary",
-  size: "md",
+  size: "sm",
   onClick: undefined,
   label: "Button",
 };
