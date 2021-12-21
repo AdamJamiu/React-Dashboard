@@ -1,10 +1,27 @@
-import { routeMapper } from "../../routes";
+// EXXTERNAL
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
+import styled from "styled-components";
+
+import {
+  Tabs,
+  Tab,
+  TabsList,
+  TabPanel,
+} from "../../components/styled.component";
+
+// HELPERS
+import { routeMapper } from "../../routes";
+import { colors } from "../../../../configurations/colors.config";
+// ASSETS
+import SVGIcon from "../../../../components/SVGIcon";
+import PadlockIcon from "../../../../images/svg/icon-font/padlock.svg";
 
 export default function LoginPage() {
   return (
-    <section className="container mt-[80px] max-w-[731px]">
-      <header>
+    <section className="container p-[15px] my-[80px] max-w-[786px]">
+      {/* HEADLINE */}
+      <header className="mb-[16px]">
         <h2
           className="text-onSurface-main"
           style={{
@@ -30,44 +47,188 @@ export default function LoginPage() {
         </p>
       </header>
 
-      <div className="mt-[16px] flex rounded-[27px] bg-opacity-[0.1] bg-success-main">
-        {/* PADLOCK ICON */}
-        <span></span>
-        <span>https://www.bybit.com</span>
-      </div>
-
-      <div>
-        <ul>
-          <li>Email</li>
-          <li>Mobile</li>
-        </ul>
-
-        <section>
-          <form action="">
-            <label htmlFor="">
-              <span>Username or email address*</span>
-            </label>
-          </form>
+      <section className="md:flex gap-[60px] items-center flex-wrap py-[30px]">
+        {/* LEFT SIDE */}
+        <section className="flex flex-col flex-auto gap-y-[24px]">
+          {/* URL CONFIRMATION ALERT */}
+          <div className="mt-[16px] flex items-center rounded-[27px] bg-opacity-[0.1] bg-success-main">
+            {/* PADLOCK ICON */}
+            <SVGIcon
+              src={PadlockIcon}
+              sx={{
+                width: 60,
+                height: 30,
+                background: colors?.success?.main,
+                borderRadius: "inherit",
+                marginRight: 20,
+                padding: 4,
+              }}
+              alt="padlock"
+            />
+            <p>
+              <span className="text-success-main">https:</span>
+              <span className="">//www.bybit.com</span>
+            </p>
+          </div>
+          {/* TAB */}
+          <Tabs defaultValue={0}>
+            <TabsList>
+              <Tab>Email</Tab>
+              <Tab>Mobile</Tab>
+            </TabsList>
+            <TabPanel value={0}>
+              <LoginWithEmail />
+            </TabPanel>
+            <TabPanel value={1}>
+              <LoginWithMobile />
+            </TabPanel>
+          </Tabs>
         </section>
 
-        <section>
-          <form action="">
-            <section>
-              <label htmlFor="">
-                <span>Password*</span>
-              </label>
-            </section>
-
-            <section className="flex justify-between">
-              <label htmlFor="">
-                <input type="checkbox" name="remmeber" id="remember" />
-              </label>
-
-              <Link to={routeMapper.forgot}>Forgot Your Password?</Link>
-            </section>
-          </form>
+        {/* RIGHT SIDE */}
+        <section className="max-w-[300px] mx-auto mt-[30px] text-center  flex flex-col gap-[20px]">
+          <figure className="qrcode-scan m-auto"></figure>
+          <div>
+            <h3 className="text-[#000] leading-[32px]">Login with QR code</h3>
+            <p
+              style={{}}
+              className="text-[14px] text-secondary-main leading-[22px]"
+            >
+              Scan this code with the <a href="#">ByBIt mobile app</a> to log in
+              instantly.
+            </p>
+          </div>
         </section>
-      </div>
+      </section>
     </section>
+  );
+}
+
+function LoginWithEmail() {
+  return (
+    <form className="flex flex-col gap-[24px]">
+      <section>
+        <label className="block bitcost-label mb-[6px]">
+          <span>Username or email address</span>
+        </label>
+        <input
+          type="tel"
+          name="phone_number"
+          required
+          className="block form-input p-2 w-full "
+        />
+      </section>
+      <section>
+        <label className="block bitcost-label mb-[6px]">
+          <span>Password</span>
+        </label>
+        <input
+          type="password"
+          name="password"
+          id=""
+          className="block p-2 form-input w-full "
+        />
+      </section>
+      <section className="flex flex-wrap items-center gap-[10px] -mt-[8px] justify-between">
+        <label
+          htmlFor="remember"
+          className="inline-flex items-center leading-[20px]  gap-[8px]"
+        >
+          <input type="checkbox" name="remember" id="remember" />
+          <span className="text-onSurface-main text-[12px]">Remember me</span>
+        </label>
+
+        <p className="text-[12px]">
+          <Link to={routeMapper.forgot}>Forgot Your Password?</Link>
+        </p>
+      </section>
+      <section>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            background: colors?.primary?.main,
+            borderRadius: "2px",
+            width: "100%",
+            padding: "12px",
+            fontWeight: "bold",
+            textTransform: "capitalize",
+          }}
+        >
+          Login
+        </Button>
+      </section>
+
+      <p className="text-center text-[15px] leading-[26px] text-secondary2-main">
+        Not a member?
+        <Link to={routeMapper?.register} className="text-[#000] ml-1">
+          Register
+        </Link>
+      </p>
+    </form>
+  );
+}
+
+function LoginWithMobile() {
+  return (
+    <form className="flex flex-col gap-[24px]">
+      <section>
+        <label className="block bitcost-label mb-[6px]">
+          <span>Mobile phone</span>
+        </label>
+        <input
+          type="tel"
+          name="phone_number"
+          required
+          className="block p-2 w-full form-input "
+        />
+      </section>
+      <section>
+        <label className="block bitcost-label mb-[6px]">
+          <span>Password*</span>
+        </label>
+        <input
+          type="password"
+          name="password"
+          id=""
+          className="block p-2 w-full form-input "
+        />
+      </section>
+      <section className="flex flex-wrap items-center gap-[10px] -mt-[8px] justify-between">
+        <label
+          htmlFor="remember"
+          className="inline-flex items-center leading-[20px]  gap-[8px]"
+        >
+          <input type="checkbox" name="remember" id="remember" />
+          <span className="text-onSurface-main text-[12px]">Remember me</span>
+        </label>
+
+        <p className="text-[12px]">
+          <Link to={routeMapper.forgot}>Forgot Your Password?</Link>
+        </p>
+      </section>
+      <section>
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            background: colors?.primary?.main,
+            borderRadius: "2px",
+            width: "100%",
+            padding: "12px",
+            fontWeight: "bold",
+            textTransform: "capitalize",
+          }}
+        >
+          Login
+        </Button>
+      </section>
+      <p className="text-center text-[15px] leading-[26px] text-secondary2-main">
+        Not a member?
+        <Link to={routeMapper?.register} className="text-[#000] ml-1">
+          Register
+        </Link>
+      </p>
+    </form>
   );
 }

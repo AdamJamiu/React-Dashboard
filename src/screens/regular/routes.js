@@ -33,7 +33,7 @@ const routeArray = [
       { index: true, element: <Authentication /> },
       {
         path: routeMapper.register,
-        element: <Authentication.RegisterPage />,
+        element: <Authentication.RegistrationPage />,
       },
       {
         path: routeMapper.forgot,
