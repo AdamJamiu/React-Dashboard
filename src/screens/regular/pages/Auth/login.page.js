@@ -1,15 +1,14 @@
 // EXXTERNAL
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-import styled from "styled-components";
 
 import {
   Tabs,
   Tab,
   TabsList,
   TabPanel,
+  StyledCard,
 } from "../../components/styled.component";
-
 // HELPERS
 import { routeMapper } from "../../routes";
 import { colors } from "../../../../configurations/colors.config";
@@ -20,44 +19,43 @@ import PadlockIcon from "../../../../images/svg/icon-font/padlock.svg";
 export default function LoginPage() {
   return (
     <section className="container p-[15px] my-[80px] max-w-[786px]">
-      {/* HEADLINE */}
-      <header className="mb-[16px]">
-        <h2
-          className="text-onSurface-main"
-          style={{
-            fontStyle: "normal",
-            fontWeight: 500,
-            fontSize: "36px",
-            lineHeight: "44px",
-            textTransform: "capitalize",
-          }}
-        >
-          Welcome to Bybit
-        </h2>
-        <p
-          className="text-secondary-main"
-          style={{
-            fontStyle: "normal",
-            fontWeight: "normal",
-            fontSize: 16,
-            lineHeight: "28px",
-          }}
-        >
-          Welcome back! Log In now to start trading
-        </p>
-      </header>
-
-      <section className="md:flex gap-[60px] items-center flex-wrap py-[30px]">
+      <section className="md:flex gap-[60px] items-center flex-wrap">
         {/* LEFT SIDE */}
-        <section className="flex flex-col flex-auto gap-y-[24px]">
+        <section className="flex flex-col flex-auto ">
+          {/* HEADLINE */}
+          <header className="max-w-[320px]">
+            <h2
+              className="text-onSurface-main mb-[8px]"
+              style={{
+                fontStyle: "normal",
+                fontWeight: 500,
+                fontSize: "36px",
+                lineHeight: "44px",
+                textTransform: "capitalize",
+              }}
+            >
+              Welcome to Bybit
+            </h2>
+            <p
+              className="text-secondary-main"
+              style={{
+                fontStyle: "normal",
+                fontWeight: "normal",
+                fontSize: 16,
+                lineHeight: "28px",
+              }}
+            >
+              Welcome back! Log In now to start trading
+            </p>
+          </header>
           {/* URL CONFIRMATION ALERT */}
-          <div className="mt-[16px] flex items-center rounded-[27px] bg-opacity-[0.1] bg-success-main">
+          <div className="my-[16px] text-[13px] flex items-center rounded-[27px] bg-opacity-[0.1] bg-success-main">
             {/* PADLOCK ICON */}
             <SVGIcon
               src={PadlockIcon}
               sx={{
-                width: 60,
-                height: 30,
+                width: 40,
+                height: 24,
                 background: colors?.success?.main,
                 borderRadius: "inherit",
                 marginRight: 20,
@@ -71,18 +69,20 @@ export default function LoginPage() {
             </p>
           </div>
           {/* TAB */}
-          <Tabs defaultValue={0}>
-            <TabsList>
-              <Tab>Email</Tab>
-              <Tab>Mobile</Tab>
-            </TabsList>
-            <TabPanel value={0}>
-              <LoginWithEmail />
-            </TabPanel>
-            <TabPanel value={1}>
-              <LoginWithMobile />
-            </TabPanel>
-          </Tabs>
+          <div className="flex flex-col flex-auto gap-y-[30px]">
+            <Tabs defaultValue={0}>
+              <TabsList>
+                <Tab>Email</Tab>
+                <Tab>Mobile</Tab>
+              </TabsList>
+              <TabPanel value={0}>
+                <LoginWithEmail />
+              </TabPanel>
+              <TabPanel value={1}>
+                <LoginWithMobile />
+              </TabPanel>
+            </Tabs>
+          </div>
         </section>
 
         {/* RIGHT SIDE */}
@@ -112,8 +112,8 @@ function LoginWithEmail() {
           <span>Username or email address</span>
         </label>
         <input
-          type="tel"
-          name="phone_number"
+          type="email"
+          name="email"
           required
           className="block form-input p-2 w-full "
         />
@@ -174,7 +174,7 @@ function LoginWithMobile() {
     <form className="flex flex-col gap-[24px]">
       <section>
         <label className="block bitcost-label mb-[6px]">
-          <span>Mobile phone</span>
+          <span>Phone number</span>
         </label>
         <input
           type="tel"
@@ -185,7 +185,7 @@ function LoginWithMobile() {
       </section>
       <section>
         <label className="block bitcost-label mb-[6px]">
-          <span>Password*</span>
+          <span>Password</span>
         </label>
         <input
           type="password"
@@ -207,6 +207,7 @@ function LoginWithMobile() {
           <Link to={routeMapper.forgot}>Forgot Your Password?</Link>
         </p>
       </section>
+
       <section>
         <Button
           type="submit"

@@ -23,7 +23,7 @@ export default function RegistrationPage() {
         {/* LEFT SIDE */}
         <section className="flex flex-col flex-auto ">
           {/* HEADLINE */}
-          <header className="">
+          <header className="max-w-[320px]">
             <h2
               className="text-onSurface-main mb-[8px]"
               style={{
@@ -146,6 +146,7 @@ function RegisterWithEmail() {
           className="block form-input p-2 w-full "
         />
       </section>
+      {/* PASSWORD */}
       <section>
         <label className="block bitcost-label mb-[6px]">
           <span>Password</span>
@@ -157,19 +158,18 @@ function RegisterWithEmail() {
           className="block p-2 form-input w-full "
         />
       </section>
-      <section className="flex flex-wrap items-center gap-[10px] -mt-[8px] justify-between">
-        <label
-          htmlFor="remember"
-          className="inline-flex items-center leading-[20px]  gap-[8px]"
-        >
-          <input type="checkbox" name="remember" id="remember" />
-          <span className="text-onSurface-main text-[12px]">Remember me</span>
+      {/* REPEAT PASSWORD */}
+      <section>
+        <label className="block bitcost-label mb-[6px]">
+          <span>Confirm Password</span>
         </label>
-
-        <p className="text-[12px]">
-          <Link to={routeMapper.forgot}>Forgot Your Password?</Link>
-        </p>
+        <input
+          type="password"
+          name="repeat_password"
+          className="block p-2 w-full form-input "
+        />
       </section>
+
       <section>
         <Button
           type="submit"
@@ -222,20 +222,17 @@ function RegisterWithMobile() {
           className="block p-2 w-full form-input "
         />
       </section>
-      <section className="flex flex-wrap items-center gap-[10px] -mt-[8px] justify-between">
-        <label
-          htmlFor="remember"
-          className="inline-flex items-center leading-[20px]  gap-[8px]"
-        >
-          <input type="checkbox" name="remember" id="remember" />
-          <span className="text-onSurface-main text-[12px]">Remember me</span>
+      <section>
+        <label className="block bitcost-label mb-[6px]">
+          <span>Confirm Password</span>
         </label>
-
-        <p className="text-[12px]">
-          <Link to={routeMapper.forgot}>Forgot Your Password?</Link>
-        </p>
+        <input
+          type="password"
+          name="repeat_password"
+          className="block p-2 w-full form-input "
+        />
       </section>
-     
+
       <section>
         <Button
           type="submit"
