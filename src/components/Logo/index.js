@@ -1,6 +1,6 @@
 function Letter() {
   return (
-    <h1 className="font-bold">
+    <h1 className="font-bold uppercase md:text-[22px]" >
       Block-<span>Stars</span>
     </h1>
   );

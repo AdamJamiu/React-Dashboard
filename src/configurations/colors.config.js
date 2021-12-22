@@ -9,6 +9,11 @@ const palette = {
     light: "#636770",
     dark: "#636770",
   },
+  secondary2: {
+    main: "#A0A0A0",
+    light: "#A0A0A0",
+    dark: "#A0A0A0",
+  },
   surface: {
     main: "#F8F8F8",
     light: "#F8F8F8",

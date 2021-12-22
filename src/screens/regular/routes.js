@@ -12,6 +12,7 @@ export const routeMapper = {
   home: "",
   login: "/auth",
   register: "/auth/register",
+  forgot: "/auth/forgot",
 };
 
 /**
@@ -27,12 +28,16 @@ const routeArray = [
   // Authentication pages
   {
     path: routeMapper?.login,
-    element: <AuthLayout />,
+    element: <GeneralRegularLayout />,
     children: [
       { index: true, element: <Authentication /> },
       {
         path: routeMapper.register,
-        element: <Authentication.RegisterPage />,
+        element: <Authentication.RegistrationPage />,
+      },
+      {
+        path: routeMapper.forgot,
+        element: <Authentication.ForgotPassword />,
       },
     ],
   },
