@@ -31,7 +31,7 @@ export default function DropDown({ children, items, showIcon }) {
     <>
       <button className="flex items-center" onClick={handleOpen}>
         {children}{" "}
-        {showIcon ? (
+        {showIcon && items?.length ? (
           <SVGIcon src={ChevronDown} className="icon" alt="chevron-down icon" />
         ) : null}
       </button>
