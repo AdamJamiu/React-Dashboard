@@ -1,2 +1,27 @@
 #home {
 }
+
+
+li{
+    list-style: none !important;
+}
+body,html,*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.heroImg{
+    background: url(../../../../images/svg/decorative/hero_bg.svg);
+}
+
+.hero-wrapper{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
