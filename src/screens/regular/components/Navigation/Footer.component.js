@@ -4,14 +4,110 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import RedditIcon from "@mui/icons-material/Reddit";
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import { routeMapper } from "../../routes";
+import { Link } from "react-router-dom";
+import Logo from "../../../../components/Logo";
 
+const FooterLinks = [
+  {
+    title: "products",
+    links: [
+      { label: "spot", path: "" },
+      { label: "Inverse perpetual", path: "" },
+      { label: "USDT perpetual", path: "" },
+      { label: "Exchange", path: "" },
+      { label: "LaunchPad", path: "" },
+      { label: "Binance Pay", path: "" },
+    ],
+  },
+  {
+    title: "services",
+    links: [
+      { label: "spot", path: "" },
+      { label: "Inverse perpetual", path: "" },
+      { label: "USDT perpetual", path: "" },
+      { label: "Exchange", path: "" },
+      { label: "LaunchPad", path: "" },
+      { label: "Binance Pay", path: "" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { label: "spot", path: "" },
+      { label: "Inverse perpetual", path: "" },
+      { label: "USDT perpetual", path: "" },
+      { label: "Exchange", path: "" },
+      { label: "LaunchPad", path: "" },
+      { label: "Binance Pay", path: "" },
+    ],
+  },
+  {
+    title: "about",
+    links: [
+      { label: "spot", path: "" },
+      { label: "Inverse perpetual", path: "" },
+      { label: "USDT perpetual", path: "" },
+      { label: "Exchange", path: "" },
+      { label: "LaunchPad", path: "" },
+      { label: "Binance Pay", path: "" },
+    ],
+  },
+];
+
+const socialLinks = [
+  { label: "Facebook", icon: <FacebookOutlinedIcon />, path: "" },
+  { label: "", icon: <RedditIcon />, path: "" },
+  { label: "", icon: <YouTubeIcon />, path: "" },
+  { label: "", icon: <TelegramIcon />, path: "" },
+  { label: "", icon: <TwitterIcon />, path: "" },
+];
 const Footer = () => {
   return (
-    <>
+    <div>
       {/* footer */}
-      <Stack className="footer">
+      <div className="container">
+        <div className="flex md:flex-nowrap flex-wrap mb-[60px]">
+          {/* LEFT HAND SIDE */}
+          <div className="flex-grow">
+            <div className="flex flex-wrap justify-between gap-[30px] p-[15px]">
+              {FooterLinks.map((item, idx) => (
+                <div key={idx}>
+                  <header className="uppercase mb-[20px] text-secondary-main leading-[20px] tracking-[.1em] font-[500]">
+                    {item.title}
+                  </header>
+                  <ul>
+                    {item.links.map((link, _idx) => (
+                      <li
+                        className="mb-[8px] capitalize text-onSurface-main text-[15px] leading-[26px]"
+                        key={_idx}
+                      >
+                        <Link to={link.path}>{link.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* RIGHT SIDE */}
+          <div className="outlined flex-0 md:min-w-[500px] w-full py-[60px] px-[15px] flex imd:tems-center flex-col">
+            <div className="md:max-w-[160px]">
+              <Logo />
+              <ul className="flex flex-wrap gap-[20px] py-[15px] outlined">
+                {socialLinks.map(({ icon, label, path }, idx) => {
+                  return (
+                    <li key={idx} className="md:min-w-[12%] text-center">
+                      <Link to={path}>{icon ? icon : label}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
         <Stack
           className="footer-wrap"
           flexDirection={{ sm: "column", lg: "row" }}
@@ -59,14 +155,14 @@ const Footer = () => {
           </Box>
 
           <Box className="footer-wrap icons">
-            <Box sx={{minWidth:'max-content'}}>
+            <Box sx={{ minWidth: "max-content" }}>
               <FacebookOutlinedIcon />
               <InstagramIcon />
               <YouTubeIcon />
               <TwitterIcon />
             </Box>
 
-            <Box sx={{minWidth:'max-content'}}>
+            <Box sx={{ minWidth: "max-content" }}>
               <RedditIcon />
               <TelegramIcon />
             </Box>
@@ -87,8 +183,8 @@ const Footer = () => {
           ©2021 block-star.com. All rights reserved. Terms of Service | Privacy
           Terms
         </Box>
-      </Stack>
-    </>
+      </div>
+    </div>
   );
 };
 
