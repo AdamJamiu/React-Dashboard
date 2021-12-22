@@ -9,6 +9,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import { routeMapper } from "../../routes";
 import { Link } from "react-router-dom";
 import Logo from "../../../../components/Logo";
+import { colors } from "../../../../configurations/colors.config";
 
 const FooterLinks = [
   {
@@ -66,15 +67,15 @@ const socialLinks = [
 ];
 const Footer = () => {
   return (
-    <div>
+    <div className="bg-white ">
       {/* footer */}
       <div className="container">
-        <div className="flex md:flex-nowrap flex-wrap mb-[60px]">
+        <div className="flex md:flex-nowrap flex-wrap py-[30px] md:py-[60px]">
           {/* LEFT HAND SIDE */}
-          <div className="flex-grow">
+          <div className="flex-grow ">
             <div className="flex flex-wrap justify-between gap-[30px] p-[15px]">
               {FooterLinks.map((item, idx) => (
-                <div key={idx}>
+                <div key={idx} className="md:flex-1 w-full">
                   <header className="uppercase mb-[20px] text-secondary-main leading-[20px] tracking-[.1em] font-[500]">
                     {item.title}
                   </header>
@@ -93,10 +94,10 @@ const Footer = () => {
             </div>
           </div>
           {/* RIGHT SIDE */}
-          <div className="outlined flex-0 md:min-w-[500px] w-full py-[60px] px-[15px] flex imd:tems-center flex-col">
-            <div className="md:max-w-[160px]">
+          <div className=" flex-0 lg:w-[500px] w-full  px-[15px] flex md:tems-center  flex-col">
+            <div className="md:max-w-[160px] mx-auto m-[10px] text-center">
               <Logo />
-              <ul className="flex flex-wrap gap-[20px] py-[15px] outlined">
+              <ul className="flex flex-wrap gap-[20px] py-[15px] ">
                 {socialLinks.map(({ icon, label, path }, idx) => {
                   return (
                     <li key={idx} className="md:min-w-[12%] text-center">
@@ -108,82 +109,21 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <Stack
-          className="footer-wrap"
-          flexDirection={{ sm: "column", lg: "row" }}
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Box className="footer-wrap">
-            <li className="footer-header">PRODUCTS</li>
-            <li className="footer-link">Inverse Perpetual</li>
-            <li className="footer-link">USDT Perpetual</li>
-            <li className="footer-link">Exchange</li>
-            <li className="footer-link">Launchpad</li>
-            <li className="footer-link">Binance Pay</li>
-            <li className="footer-link">Gift Card</li>
-          </Box>
-
-          <Box className="footer-wrap">
-            <li className="footer-header">SERVICES</li>
-            <li className="footer-link">Inverse Perpetual</li>
-            <li className="footer-link">USDT Perpetual</li>
-            <li className="footer-link">Exchange</li>
-            <li className="footer-link">Launchpad</li>
-            <li className="footer-link">Binance Pay</li>
-            <li className="footer-link">Gift Card</li>
-          </Box>
-
-          <Box className="footer-wrap">
-            <li className="footer-header">SUPPORT</li>
-            <li className="footer-link">Inverse Perpetual</li>
-            <li className="footer-link">USDT Perpetual</li>
-            <li className="footer-link">Exchange</li>
-            <li className="footer-link">Launchpad</li>
-            <li className="footer-link">Binance Pay</li>
-            <li className="footer-link">Gift Card</li>
-          </Box>
-
-          <Box className="footer-wrap">
-            <li className="footer-header">ABOUT</li>
-            <li className="footer-link">Inverse Perpetual</li>
-            <li className="footer-link">USDT Perpetual</li>
-            <li className="footer-link">Exchange</li>
-            <li className="footer-link">Launchpad</li>
-            <li className="footer-link">Binance Pay</li>
-            <li className="footer-link">Gift Card</li>
-          </Box>
-
-          <Box className="footer-wrap icons">
-            <Box sx={{ minWidth: "max-content" }}>
-              <FacebookOutlinedIcon />
-              <InstagramIcon />
-              <YouTubeIcon />
-              <TwitterIcon />
-            </Box>
-
-            <Box sx={{ minWidth: "max-content" }}>
-              <RedditIcon />
-              <TelegramIcon />
-            </Box>
-          </Box>
-        </Stack>
-
-        <Divider sx={{ pt: "1em" }} />
-
-        <Box
-          sx={{
-            width: "100%",
-            textAlign: "center",
-            pt: "2em",
-            pb: "2em",
-            color: "var(--secondary)",
-          }}
-        >
-          ©2021 block-star.com. All rights reserved. Terms of Service | Privacy
-          Terms
-        </Box>
       </div>
+      <Divider sx={{ pt: "1em" }} />
+
+      <Box
+        sx={{
+          width: "100%",
+          textAlign: "center",
+          pt: "1em",
+          pb: "1em",
+          color: colors.secondary.main,
+        }}
+      >
+        ©2021 block-star.com. All rights reserved. Terms of Service | Privacy
+        Terms
+      </Box>
     </div>
   );
 };
