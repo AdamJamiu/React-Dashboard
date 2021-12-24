@@ -65,7 +65,7 @@ export default function RegistrationPage() {
             />
             <p>
               <span className="text-success-main">https:</span>
-              <span className="">//www.bybit.com</span>
+              <span className="">www.bybit.com</span>
             </p>
           </div>
           {/* TAB */}

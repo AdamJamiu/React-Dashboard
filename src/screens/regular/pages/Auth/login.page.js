@@ -7,7 +7,7 @@ import {
   Tab,
   TabsList,
   TabPanel,
-  StyledCard,
+  // StyledCard,
 } from "../../components/styled.component";
 // HELPERS
 import { routeMapper } from "../../routes";

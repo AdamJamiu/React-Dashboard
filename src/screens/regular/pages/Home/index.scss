@@ -1,21 +1,23 @@
-#home {
-}
+#home {}
 
 
-li{
+li {
     list-style: none !important;
 }
-body,html,*{
+
+body,
+html,
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.heroImg{
+.heroImg {
     background: url(../../../../images/svg/decorative/hero_bg.svg);
 }
 
-.hero-wrapper{
+.hero-wrapper {
     display: flex;
     width: 100%;
     padding: 20px;
@@ -24,4 +26,27 @@ body,html,*{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+// Promotion styles
+
+.promotion-bg {}
+
+.slider-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.promotion-card {
+    border-radius: 7px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+    color: #fff;
+    background: linear-gradient(232deg, rgba(28, 26, 137, 1) 35%, rgba(37, 54, 210, 1) 100%);
 }
