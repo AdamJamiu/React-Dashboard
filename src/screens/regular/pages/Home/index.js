@@ -32,6 +32,8 @@ export default function HomePage() {
   );
 }
 
+// Hero box component
+
 const HeroBox = () => {
   return (
     <>

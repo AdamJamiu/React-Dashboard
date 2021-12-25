@@ -1,5 +1,6 @@
 :root {
     --primary: #636770;
+    --surface: #f8f8f8;
     --onSurface: #111213;
     --warning: #fabe3c;
     --success: #27b96a;
@@ -9,7 +10,7 @@
     --interactive: #2e72d2;
     --surface: #f8f8f8;
     --secondary: #636770;
-  }
+}
 
 #home {
     background-color: #fff;
@@ -69,23 +70,34 @@ html,
 }
 
 // Market Trends
-.market-title{
-    color: var(--onSurface) ;
+.market-title {
+    color: var(--onSurface);
 }
-.market-container{
+
+.market-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
 
-// Table Row  styles
+// Table  styles
 
 .MuiTableCell-root {
     border-bottom: none !important;
-  }
+    color: inherit;
+}
 
-  .css-1azl6jz-MuiTableCell-root{
-      color: var(--secondary);
-      font-weight: bold !important;
-  }
+.MuiTableBody-root {
+    border-top: 1px solid #E5E5E5;
+}
+
+.MuiTableRow-hover:hover {
+    background: red ;
+}
+
+
+.css-1azl6jz-MuiTableCell-root {
+    color: var(--secondary);
+    font-weight: bold !important;
+}
