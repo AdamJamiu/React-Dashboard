@@ -9,6 +9,8 @@ import {
 import "./index.scss";
 import Promotion from "../../../../components/Promotion/Promotion";
 import MarketTrends from "../../components/tables";
+import GetStarted from "../../components/getStarted";
+import AppDownload from "../../components/appDownload";
 
 
 /**
@@ -27,7 +29,9 @@ export default function HomePage() {
       <Container>
       <Promotion />
       <MarketTrends/>
+      <GetStarted />
       </Container>
+      <AppDownload />
     </div>
   );
 }

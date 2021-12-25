@@ -69,6 +69,48 @@ html,
     // background: linear-gradient(232deg, rgba(28, 26, 137, 1) 35%, rgba(37, 54, 210, 1) 100%);
 }
 
+
+// 
+.mysurface{
+    color: var(--surface);
+}
+
+.mycritical{
+    color: var(--critical);
+}
+
+.myhighlight{
+    color: var(--highlight);
+}
+
+.myinteractive{
+    color: var(--interactive);
+}
+
+.myprimary{
+color: var(--primary);
+}
+
+.mysecondary{
+    color: var(--secondary);
+}
+
+.onsurface{
+    color: var(--onSurface);
+}
+
+.mydanger{
+color: var(--critical);
+}
+
+.mywarning {
+    color: var(--success);
+}
+
+.surface-bg{
+    background-color: var(--surface);
+}
+
 // Market Trends
 .market-title {
     color: var(--onSurface);
@@ -101,3 +143,7 @@ html,
     color: var(--secondary);
     font-weight: bold !important;
 }
+
+
+// get strated section styles
+
