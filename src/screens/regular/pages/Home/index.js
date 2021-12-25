@@ -4,9 +4,11 @@ import {
   InputAdornment,
   Button,
   OutlinedInput,
+  Container,
 } from "@mui/material";
 import "./index.scss";
 import Promotion from "../../../../components/Promotion/Promotion";
+import MarketTrends from "../../components/tables";
 
 
 /**
@@ -16,12 +18,16 @@ import Promotion from "../../../../components/Promotion/Promotion";
 export default function HomePage() {
   return (
     <div id="home" className="pb-10">
+
       <header>
         <HeroBox />
         
       </header>
 
+      <Container>
       <Promotion />
+      <MarketTrends/>
+      </Container>
     </div>
   );
 }
@@ -31,7 +37,7 @@ const HeroBox = () => {
     <>
       <div class="heroImg">
         <div class="hero-wrapper py-10 xl container mx-auto ">
-          <h1 className="font-semibold text-5xl pb-4 hero-header">
+          <h1 className="font-thin text-5xl pb-4 hero-header">
             Next Level Trading
           </h1>
           <p className="w-80 mb-6 text-center hero-txt">

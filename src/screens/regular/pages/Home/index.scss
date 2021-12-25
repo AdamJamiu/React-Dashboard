@@ -1,5 +1,19 @@
-#home {}
+:root {
+    --primary: #636770;
+    --onSurface: #111213;
+    --warning: #fabe3c;
+    --success: #27b96a;
+    --decorative: linear-gradient(216.56deg, #e250e5 5.32%, #4b50e6 94.32%);
+    --highlight: #1e58c8;
+    --critical: #d33535;
+    --interactive: #2e72d2;
+    --surface: #f8f8f8;
+    --secondary: #636770;
+  }
 
+#home {
+    background-color: #fff;
+}
 
 li {
     list-style: none !important;
@@ -30,17 +44,19 @@ html,
 
 // Promotion styles
 
-.promotion-bg {}
-
-.slider-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.promotion-container {
+    padding-top: 40px;
 }
+
+// .slider-container {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+// }
 
 .promotion-card {
     border-radius: 7px;
-    width: 300px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -48,5 +64,28 @@ html,
     text-align: left;
     padding: 20px;
     color: #fff;
-    background: linear-gradient(232deg, rgba(28, 26, 137, 1) 35%, rgba(37, 54, 210, 1) 100%);
+    background: url(../../../../images/svg/decorative/promoBg.svg);
+    // background: linear-gradient(232deg, rgba(28, 26, 137, 1) 35%, rgba(37, 54, 210, 1) 100%);
 }
+
+// Market Trends
+.market-title{
+    color: var(--onSurface) ;
+}
+.market-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+// Table Row  styles
+
+.MuiTableCell-root {
+    border-bottom: none !important;
+  }
+
+  .css-1azl6jz-MuiTableCell-root{
+      color: var(--secondary);
+      font-weight: bold !important;
+  }
