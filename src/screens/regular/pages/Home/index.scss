@@ -8,7 +8,6 @@
     --highlight: #1e58c8;
     --critical: #d33535;
     --interactive: #2e72d2;
-    --surface: #f8f8f8;
     --secondary: #636770;
 }
 
@@ -112,9 +111,6 @@ color: var(--critical);
 }
 
 // Market Trends
-.market-title {
-    color: var(--onSurface);
-}
 
 .market-container {
     display: flex;
@@ -147,3 +143,6 @@ color: var(--critical);
 
 // get strated section styles
 
+img.img-hover:hover{
+    opacity: .5;
+}

@@ -9,8 +9,8 @@ const GetStarted = () => {
     <>
       <div class="flex-column mt-10 pb-10 justify-center items-center">
         <div class="flex-1">
-          <h3 class="text-center leading-9 font-semibold text-xl">Get started in a few minutes</h3>
-          <p class="text-center text-sm">
+          <h3 class="text-center leading-9 onsurface font-semibold text-xl">Get started in a few minutes</h3>
+          <p class="text-center mysecondary text-sm">
             BybIt supports a variety of the most popular digital currencies.
           </p>
         </div>

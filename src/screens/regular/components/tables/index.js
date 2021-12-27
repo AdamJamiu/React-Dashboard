@@ -75,15 +75,11 @@ const TabsList = styled(TabsListUnstyled)`
 export default function MarketTrends() {
   return (
     <>
-      <div className="market-container mt-10 "></div>
+      <div class="mt-10">
 
       <TabsUnstyled defaultValue={0}>
-        <Stack
-          direction="row"
-          alignItems="flex-start"
-          justifyContent="space-between"
-        >
-          <p className="market-title text-xl font-bold">Market Trends</p>
+        <div class="flex flex-wrap justify-between items-center ">
+          <p className="onsurface text-xl font-bold">Market Trends</p>
           <TabsList>
             {TabsListData.map((item, idx) => {
               return (
@@ -93,7 +89,7 @@ export default function MarketTrends() {
               );
             })}
           </TabsList>
-        </Stack>
+        </div>
 
         <TabPanel value={0}>
           <Spot />
@@ -101,6 +97,8 @@ export default function MarketTrends() {
         <TabPanel value={1}>Second content</TabPanel>
         <TabPanel value={2}>Third content</TabPanel>
       </TabsUnstyled>
+      </div>
+
     </>
   );
 }
