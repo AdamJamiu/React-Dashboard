@@ -9,28 +9,56 @@ const GetStarted = () => {
     <>
       <div class="flex-column mt-10 pb-10 justify-center items-center">
         <div class="flex-1">
-          <h3 class="text-center leading-9 onsurface font-semibold text-xl">Get started in a few minutes</h3>
+          <h3 class="text-center leading-9 onsurface font-semibold text-xl">
+            Get started in a few minutes
+          </h3>
           <p class="text-center mysecondary text-sm">
             BybIt supports a variety of the most popular digital currencies.
           </p>
         </div>
 
-        <div class="flex flex-row justify-around items-center mt-10">
-          <div class="flex flex-column shadow-lg p-3 rounded-full">
-            <img src={profile} alt="profile.svg" />
+        <div class="flex flex-row justify-center items-start mt-10">
+          <div class="flex flex-col items-center">
+          <div class="pb-t shadow-lg p-5 rounded-full">
+              <img
+                src={profile}
+                alt="profile.svg"
+              />
+            </div>
+
+            <h1 class="text-lg pt-8 leading-10 font-medium">
+              Create An Account
+            </h1>
           </div>
-          <div class="">
+
+          <div class="pt-5">
             <img src={one} alt="profile.svg" />
           </div>
-          <div class="p-3 shadow-lg rounded-full">
-            <img src={bank} alt="profile.svg" />
+
+          <div class="flex flex-col items-center">
+            <div class="pb-t shadow-lg p-5 rounded-full">
+              <img
+                
+                src={bank}
+                alt="profile.svg"
+              />
+            </div>
+
+            <h1 class="text-lg pt-8 font-medium">Link your bank account</h1>
           </div>
-          <div class="">
+          <div class="pt-5">
             <img src={two} alt="profile.svg" />
           </div>
 
-          <div class="flex-column p-3 shadow-lg rounded-full">
-            <img src={transaction} alt="profile.svg" />
+          <div class="flex flex-col items-center">
+          <div class="pb-t shadow-lg p-5 rounded-full">
+              <img
+                src={transaction}
+                alt="profile.svg"
+              />
+            </div>
+
+            <h1 class="text-lg pt-8 font-medium">Start transaction</h1>
           </div>
         </div>
       </div>

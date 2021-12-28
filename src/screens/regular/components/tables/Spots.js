@@ -8,6 +8,11 @@ import {
   Paper,
   Button
 } from "@mui/material";
+import chart from '../../../../images/svg/decorative/green-chart.svg';
+import btc from '../../../../images/svg/coins/bitcoin-btc.svg'
+import etherum from '../../../../images/svg/coins/ethereum-eth.svg'
+import xrp from '../../../../images/svg/coins/xrp-xrp.svg'
+import ftt from '../../../../images/svg/coins/ftx-token-ftt.svg'
 
 const tableHeaders = [
   "Name",
@@ -20,67 +25,75 @@ const tableHeaders = [
 
 const bodyData = [
   {
+    logo: btc,
     name: "BIT/USDT",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "../../../../images/svg/decorative/green-chart.svg",
+    price: 2990,
+    twofourChange: +3.33,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: btc,
     name: "BIT/USDT",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
+    price: 2990,
+    twofourChange: +1.64,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: etherum,
     name: "ETH/USDT",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
+    price: 2990,
+    twofourChange: +20.64,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: xrp,
     name: "XRP/USDT",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
+    price: 2990,
+    twofourChange: -10.16,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: xrp,
     name: "LUNA/BNB",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
+    price: 2990,
+    twofourChange: +9.64,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: ftt,
     name: "LUNA/BNB",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
+    price: 2990,
+    twofourChange: -10.16,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: ftt,
     name: "FTT/BNB",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
-    trade: <Button variant="contained">Trade</Button>,
+    price: 2990,
+    twofourChange: +4.5,
+    twofourVol: "82.64M",
+    chart: chart,
+     trade: <Button variant="contained">Trade</Button>,
   },
   {
+    logo: btc,
     name: "FTT/BNB",
-    price: "2, 990",
-    twofourChange: "+4.5",
-    twofourVol: "-1.4",
-    chart: "",
+    price: 2990,
+    twofourChange: +4.5,
+    twofourVol: "82.64M",
+    chart: chart,
     trade: <Button variant="contained">Trade</Button>,
   },
 ];
@@ -106,14 +119,17 @@ export default function Spot() {
               key={idx}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-                <TableCell component="th" scope="row">
-                  {row.name}
+                <TableCell scope="row">
+                  <div class="flex items.center pl-2 gap-2">
+                    <img src={row.logo} alt={row.logo}/>
+                    <p class="font-medium">{row.name}</p>
+                  </div>
                 </TableCell>
-                <TableCell align="right">{row.price}</TableCell>
-                <TableCell align="right">{row.twofourChange}</TableCell>
-                <TableCell align="right">{row.twofourVol}</TableCell>
-                <TableCell align="right">
-                  <img src={row.chart} />{" "}
+                <TableCell class="text-right font-medium">{row.price}</TableCell>
+                <TableCell class={row.twofourChange <= 0 ? "text-red-500 text-right" : "text-green-500 text-right" }>{row.twofourChange}%</TableCell>
+                <TableCell class="text-right font-medium" >{row.twofourVol}</TableCell>
+                <TableCell class="text-right font-medium">
+                  <img src={row.chart} alt="chart"/>
                 </TableCell>
                 <TableCell align="right">{row.trade}</TableCell>
               

@@ -48,11 +48,6 @@ html,
     padding-top: 40px;
 }
 
-// .slider-container {
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-// }
 
 .promotion-card {
     border-radius: 7px;
@@ -70,43 +65,43 @@ html,
 
 
 // 
-.mysurface{
+.mysurface {
     color: var(--surface);
 }
 
-.mycritical{
+.mycritical {
     color: var(--critical);
 }
 
-.myhighlight{
+.myhighlight {
     color: var(--highlight);
 }
 
-.myinteractive{
+.myinteractive {
     color: var(--interactive);
 }
 
-.myprimary{
-color: var(--primary);
+.myprimary {
+    color: var(--primary);
 }
 
-.mysecondary{
+.mysecondary {
     color: var(--secondary);
 }
 
-.onsurface{
+.onsurface {
     color: var(--onSurface);
 }
 
-.mydanger{
-color: var(--critical);
+.mydanger {
+    color: var(--critical);
 }
 
 .mywarning {
     color: var(--success);
 }
 
-.surface-bg{
+.surface-bg {
     background-color: var(--surface);
 }
 
@@ -131,7 +126,7 @@ color: var(--critical);
 }
 
 .MuiTableRow-hover:hover {
-    background: red ;
+    background: red;
 }
 
 
@@ -140,9 +135,16 @@ color: var(--critical);
     font-weight: bold !important;
 }
 
+.MuiButtonBase-root {
+    text-transform: capitalize !important;
+}
 
 // get strated section styles
 
-img.img-hover:hover{
+img.img-hover:hover {
     opacity: .5;
+}
+
+.blue-bg {
+    background-color: #1e58c8;
 }
