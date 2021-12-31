@@ -15,6 +15,9 @@ import { colors } from "../../../../configurations/colors.config";
 // ASSETS
 import SVGIcon from "../../../../components/SVGIcon";
 import PadlockIcon from "../../../../images/svg/icon-font/padlock.svg";
+import ShieldIcon from "../../../../images/svg/decorative/shield.svg";
+import PiggyBankIcon from "../../../../images/svg/decorative/piggy-bank.svg";
+import SafeIcon from "../../../../images/svg/decorative/safe.svg";
 
 export default function RegistrationPage() {
   return (
@@ -45,7 +48,7 @@ export default function RegistrationPage() {
                 lineHeight: "28px",
               }}
             >
-              Welcome back! Log In now to start trading
+              Register now to start trading
             </p>
           </header>
           {/* URL CONFIRMATION ALERT */}
@@ -86,11 +89,11 @@ export default function RegistrationPage() {
         </section>
 
         {/* RIGHT SIDE */}
-        <section className="max-w-[300px] mx-auto text-center  flex flex-col gap-[20px]">
+        <section className="max-w-[270px] mx-auto text-center  flex flex-col gap-[20px]">
           <StyledCard>
-            <div className="flex flex-col gap-">
+            <div className="flex flex-col items-center">
               <figure>
-                <img src="" alt="" />
+                <img src={ShieldIcon} alt="" />
               </figure>
               <header>
                 <h3 className="card-headline">Hassle-Free</h3>
@@ -101,9 +104,9 @@ export default function RegistrationPage() {
             </div>
           </StyledCard>
           <StyledCard>
-            <div className="flex flex-col gap-">
+            <div className="flex flex-col items-center">
               <figure>
-                <img src="" alt="" />
+                <img src={PiggyBankIcon} alt="" />
               </figure>
               <header>
                 <h3 className="card-headline">Cost Saving</h3>
@@ -114,9 +117,9 @@ export default function RegistrationPage() {
             </div>
           </StyledCard>
           <StyledCard>
-            <div className="flex flex-col gap-">
+            <div className="flex flex-col items-center">
               <figure>
-                <img src="" alt="" />
+                <img src={SafeIcon} alt="" />
               </figure>
               <header>
                 <h3 className="card-headline">Class Security</h3>
@@ -199,7 +202,7 @@ function RegisterWithEmail() {
 
 function RegisterWithMobile() {
   return (
-    <form className="flex flex-col gap-[24px]">
+    <form className="flex flex-col gap-[24px] wow">
       <section>
         <label className="block bitcost-label mb-[6px]">
           <span>Phone number</span>

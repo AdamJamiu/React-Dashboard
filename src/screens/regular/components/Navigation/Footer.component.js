@@ -26,34 +26,35 @@ const FooterLinks = [
   {
     title: "services",
     links: [
-      { label: "spot", path: "" },
-      { label: "Inverse perpetual", path: "" },
-      { label: "USDT perpetual", path: "" },
-      { label: "Exchange", path: "" },
-      { label: "LaunchPad", path: "" },
-      { label: "Binance Pay", path: "" },
+      { label: "buy crypto", path: "" },
+      { label: "markets", path: "" },
+      { label: "trading fee", path: "" },
+      { label: "Affiliate Program", path: "" },
+      { label: "Referral Program", path: "" },
+      { label: "API", path: "" },
+      { label: "Listing Application", path: "" },
     ],
   },
   {
     title: "Support",
     links: [
-      { label: "spot", path: "" },
-      { label: "Inverse perpetual", path: "" },
-      { label: "USDT perpetual", path: "" },
-      { label: "Exchange", path: "" },
-      { label: "LaunchPad", path: "" },
-      { label: "Binance Pay", path: "" },
+      { label: "Bybit Learn", path: "" },
+      { label: "Help Center", path: "" },
+      { label: "User Feedback", path: "" },
+      { label: "Submit a request", path: "" },
+      { label: "API Documentation", path: "" },
+      { label: "Trading Rules", path: "" },
+      { label: "Binance Verify", path: "" },
     ],
   },
   {
     title: "about",
     links: [
-      { label: "spot", path: "" },
-      { label: "Inverse perpetual", path: "" },
-      { label: "USDT perpetual", path: "" },
-      { label: "Exchange", path: "" },
-      { label: "LaunchPad", path: "" },
-      { label: "Binance Pay", path: "" },
+      { label: "About Bybit", path: "" },
+      { label: "Authenticity Check", path: "" },
+      { label: "Careers", path: "" },
+      { label: "Business Contacts", path: "" },
+      { label: "Blog", path: "" },
     ],
   },
 ];
@@ -96,7 +97,7 @@ const Footer = () => {
           {/* RIGHT SIDE */}
           <div className=" flex-0 lg:w-[500px] w-full  px-[15px] flex md:tems-center  flex-col">
             <div className="md:max-w-[160px] mx-auto m-[10px] text-center">
-              <Logo />
+              <Logo color={colors.primary.main} />
               <ul className="flex flex-wrap gap-[20px] py-[15px] ">
                 {socialLinks.map(({ icon, label, path }, idx) => {
                   return (
@@ -118,6 +119,7 @@ const Footer = () => {
           textAlign: "center",
           pt: "1em",
           pb: "1em",
+          fontSize: '15px',
           color: colors.secondary.main,
         }}
       >

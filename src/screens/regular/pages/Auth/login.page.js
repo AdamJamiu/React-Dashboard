@@ -15,6 +15,7 @@ import { colors } from "../../../../configurations/colors.config";
 // ASSETS
 import SVGIcon from "../../../../components/SVGIcon";
 import PadlockIcon from "../../../../images/svg/icon-font/padlock.svg";
+import QRCodeIcon from "../../../../images/png/qrcode.png";
 
 export default function LoginPage() {
   return (
@@ -87,7 +88,9 @@ export default function LoginPage() {
 
         {/* RIGHT SIDE */}
         <section className="max-w-[300px] mx-auto mt-[30px] text-center  flex flex-col gap-[20px]">
-          <figure className="qrcode-scan m-auto"></figure>
+          <figure className="qrcode-scan m-auto">
+            <img src={QRCodeIcon} className="w-full object-cover h-full" alt="" />
+          </figure>
           <div>
             <h3 className="text-[#000] leading-[32px]">Login with QR code</h3>
             <p
@@ -106,7 +109,10 @@ export default function LoginPage() {
 
 function LoginWithEmail() {
   return (
-    <form className="flex flex-col gap-[24px]">
+    <form
+      data-wow-delay="0.5s"
+      className="flex flex-col wow bounceInDown center gap-[24px] wow fadeInDown"
+    >
       <section>
         <label className="block bitcost-label mb-[6px]">
           <span>Username or email address</span>
