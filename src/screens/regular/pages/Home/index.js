@@ -15,6 +15,72 @@ export default function HomePage() {
   );
 }
 
+<<<<<<< Updated upstream
+=======
+// Support Section
+
+const SupportSection = () => {
+  return (
+    <>
+      <div class="flex-column justify-center items-center flex-wrap p-10 pb-20">
+        <div class="pb-5 pt-10">
+          <h1 class="text-3xl font-medium leading-9 onsurface leading-10 text-center">
+            Get In Touch. Stay In Touch.
+          </h1>
+          <p class="text-md leading-9 secondary text-center">
+            BybIt supports a variety of the most popular digital currencies.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap  gap-5 justify-center  mt-10">
+          <div class="flex flex-col justify-center items-center p-5 shadow-lg border">
+            <img src={headphone} width="60px" class="pb-5" alt="headphone" />
+            <h1 class="text-lg font-medium text-center onsurface leading-10">
+              24/7 Support
+            </h1>
+            <p class="text-sm leading-6 text-center mysecondary">
+              Got a problem? Just get in touch, <br />
+              Our support team is available 24/7
+            </p>
+          </div>
+          <div class="flex flex-col justify-center items-center p-5 border shadow-lg">
+            <img src={book} class="pb-5" width="60px" alt="headphone" />
+            <h1 class="text-lg font-medium leading-10 onsurface text-center">
+              BYBIT Blog
+            </h1>
+            <p class="text-sm leading-6 text-center mysecondary">
+              News and updates from the world’s <br />
+              leading cryptocurrency exchange.
+            </p>
+          </div>
+          <div class="flex flex-col items-center justify-center p-5 shadow-lg border">
+            <img src={chat} width="60px" class="pb-5" alt="headphone" />
+            <h1 class="text-lg text-center onsurface leading-10 font-medium">
+              Community
+            </h1>
+            <p class="text-sm leading-6 text-center mysecondary">
+              ByBit is global. Join the discussion in <br /> our worldwide
+              communities.
+            </p>
+          </div>
+          <div class="flex flex-col w-100 justify-center items-center p-5 shadow-lg border">
+            <img src={group} width="60px" alt="headphone" class="pb-5" />
+            <h1 class="text-lg font-medium onsurface leading-10 text-center">
+              Careers
+            </h1>
+            <p class="text-sm leading-6 text-center mysecondary">
+              Help build the future of technology. Start
+              <br /> your new career at Binance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+// Hero box component
+>>>>>>> Stashed changes
 
 const HeroBox = () => {
   return (
