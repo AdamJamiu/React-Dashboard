@@ -49,7 +49,6 @@ export default function HomePage() {
   );
 }
 
-// Support Section
 
 const SupportSection = () => {
   return (
@@ -114,7 +113,6 @@ const SupportSection = () => {
 // Hero box component
 
 const HeroBox = () => {
-  return (
     <>
       <div class="heroImg">
         <div class="hero-wrapper py-10 container mx-auto ">
@@ -141,5 +139,5 @@ const HeroBox = () => {
         </div>
       </div>
     </>
-  );
+  
 };
