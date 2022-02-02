@@ -1,0 +1,74 @@
+@import '../stylesheets/index.scss';
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-grey);
+  border-radius: 3px;
+}
+
+/* Firefox */
+.selector {
+  scrollbar-width: thin;
+}
+
+tspan{
+  font-size: 10px;
+}
+
+a:hover {
+  text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+.screen-container {
+  margin-left: 170px;
+  padding-top: 4em;
+  padding-right: 1em;
+  height: 100vh;
+}
+
+.hover-grey {
+  color: var(--hover-grey);
+}
+
+.grey {
+  color: var(--google-grey) !important;
+}
+
+.dark-grey {
+  color: var(--dark-grey);
+}
+
+/* // Table  styles */
+
+.MuiTableCell-root {
+  border-bottom: none !important;
+  color: inherit;
+}
+
+.MuiTableBody-root {
+  border-top: 1px solid #e5e5e5;
+}
+
+.css-1azl6jz-MuiTableCell-root {
+  color: var(--secondary);
+  font-weight: bold !important;
+}
+
+.MuiButtonBase-root {
+  text-transform: capitalize !important;
+  font-size: 10px !important;
+}
+
+.css-10hburv-MuiTypography-root {
+font-size: 14px !important;
+}
+
+
+.avatar-img{
+  object-fit: cover;
+}
